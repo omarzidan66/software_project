@@ -22,7 +22,7 @@ class SpecialHeader extends HTMLElement {
         </div>
         <div
           class="navbar-collapse collapse w-full h-[100vh] absolute top-0 left-0">
-          <div class="navbar-inner h-full relative flex mt-16">
+          <div class="navbar-inner h-full relative flex mt-20">
             <ul
               class="navbar-nav w-full sm:flex justify-center items-center sm:flex-row sm:flex-wrap my-[20vh] sm:mx-56 font-bold">
               <li
@@ -48,10 +48,6 @@ class SpecialHeader extends HTMLElement {
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-200 text-white">
                 <a href="">التعليقات و الاقتراحات</a>
-              </li>
-              <li
-                class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-200 text-white">
-                <a href=""> بلاغاتي</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-300 text-white">
