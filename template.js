@@ -35,11 +35,11 @@ class SpecialHeader extends HTMLElement {
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-150 text-white">
-                <a  href="#balagh">بلاغات عامة</a>
+                <a href="#balagh">بلاغات عامة</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-150 text-white">
-                <a  href="#balagh">العطاءات</a>
+                <a href="#balagh">العطاءات</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-200 text-white">
@@ -63,60 +63,82 @@ class SpecialHeader extends HTMLElement {
       </nav>
     </header>
       `;
+
+    // Initialize navigation behavior after the component is rendered
+    this.initNavigation();
+  }
+
+  initNavigation() {
+    const navButton = this.querySelector(".navbar-toggler");
+    const menuPanel = this.querySelector(".navbar-collapse");
+    const navLinks = this.querySelectorAll(".navbar-nav a");
+
+    // Toggle menu when navbar toggler is clicked
+    navButton.addEventListener("click", function () {
+      menuPanel.classList.toggle("show");
+      menuPanel.classList.toggle("collapse");
+
+      // Update the aria-expanded attribute
+      const isExpanded = menuPanel.classList.contains("show");
+      navButton.setAttribute("aria-expanded", isExpanded);
+
+      // Disable/enable scrolling based on menu state
+      document.body.style.overflow = isExpanded ? "hidden" : "auto";
+    });
+
+    // Add click event to all nav links
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        // Prevent default navigation behavior temporarily
+        e.preventDefault();
+
+        console.log("Nav item clicked, closing menu");
+
+        // Store the href value to navigate to later
+        const href = this.getAttribute("href");
+
+        // Close the menu
+        menuPanel.classList.remove("show");
+        menuPanel.classList.add("collapse");
+        navButton.setAttribute("aria-expanded", "false");
+
+        // Add a small delay before navigating to the link target
+        setTimeout(function () {
+          // Re-enable scrolling
+          document.body.style.overflow = "auto";
+
+          // Remove active class from all links and add to clicked link
+          navLinks.forEach((nav) => nav.classList.remove("active"));
+          link.classList.add("active");
+
+          // Navigate to the link target
+          if (href && href !== "") {
+            if (href.startsWith("#")) {
+              // Scroll to anchor
+              const targetElement = document.querySelector(href);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+              }
+            } else {
+              // Navigate to another page
+              window.location.href = href;
+            }
+          }
+        }, 1000); // 300ms delay, adjust as needed
+      });
+    });
+
+    // Set the home link as active by default
+    const homeLink = this.querySelector('.navbar-nav a[href="#banner"]');
+    if (homeLink) {
+      homeLink.classList.add("active");
+    }
   }
 }
 
 customElements.define("special-header", SpecialHeader);
-// اضافة من شات عشان تغير لون اللينك 
-document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll(".navbar-nav a");
 
-  // تعيين الصفحة الرئيسية كخيار افتراضي
-  const homeLink = document.querySelector('.navbar-nav a[href="#banner"]');
-  if (homeLink) {
-    homeLink.classList.add("active");
-  }
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      // إزالة الكلاس "active" من جميع الروابط
-      navLinks.forEach((nav) => nav.classList.remove("active"));
-
-      // إضافة الكلاس "active" للرابط الذي تم النقر عليه
-      this.classList.add("active");
-    });
-  });
-});
-
-const navButton = document.querySelector(".navbar-toggler");
-const menuPanel = document.querySelector(".navbar-collapse");
-const navLinks = document.querySelectorAll(".navbar-nav a");
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", function () {
-    console.log("Nav item clicked, closing menu");
-    menuPanel.classList.remove("show");
-    menuPanel.classList.add("collapse");
-    navButton.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "auto";
-  });
-});
-
-navButton.addEventListener("click", function () {
-  // Toggle the "show" class on the menu panel
-  menuPanel.classList.toggle("show");
-  menuPanel.classList.toggle("collapse");
-
-  // Get the current state of aria-expanded and toggle it
-  const isExpanded = navButton.getAttribute("aria-expanded") === "true";
-  navButton.setAttribute("aria-expanded", !isExpanded);
-  // disable scrolling when menu is open
-  if (!isExpanded) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
-});
+// Handle scroll event
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.querySelector("body");
 
