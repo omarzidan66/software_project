@@ -27,11 +27,11 @@ class SpecialHeader extends HTMLElement {
               class="navbar-nav w-full sm:flex justify-center items-center sm:flex-row sm:flex-wrap my-[20vh] sm:mx-56 font-bold">
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-100 text-yellow-600">
-                <a href="">الصفحة الرئيسية</a>
+                <a href="#banner">الصفحة الرئيسية</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-100 text-white">
-                <a href="">دليل الخدمات</a>
+                <a href="#services">دليل الخدمات</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-150 text-white">
@@ -63,6 +63,26 @@ class SpecialHeader extends HTMLElement {
 }
 
 customElements.define("special-header", SpecialHeader);
+// اضافة من شات عشان تغير لون اللينك 
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".navbar-nav a");
+
+  // تعيين الصفحة الرئيسية كخيار افتراضي
+  const homeLink = document.querySelector('.navbar-nav a[href="#banner"]');
+  if (homeLink) {
+    homeLink.classList.add("active");
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      // إزالة الكلاس "active" من جميع الروابط
+      navLinks.forEach((nav) => nav.classList.remove("active"));
+
+      // إضافة الكلاس "active" للرابط الذي تم النقر عليه
+      this.classList.add("active");
+    });
+  });
+});
 
 const navButton = document.querySelector(".navbar-toggler");
 const menuPanel = document.querySelector(".navbar-collapse");
