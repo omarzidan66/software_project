@@ -35,11 +35,11 @@ class SpecialHeader extends HTMLElement {
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-150 text-white">
-                <a href="">بلاغات عامة</a>
+                <a  href="#balagh">بلاغات عامة</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-150 text-white">
-                <a href="">العطاءات</a>
+                <a  href="#balagh">العطاءات</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-200 text-white">
@@ -66,6 +66,17 @@ customElements.define("special-header", SpecialHeader);
 
 const navButton = document.querySelector(".navbar-toggler");
 const menuPanel = document.querySelector(".navbar-collapse");
+const navLinks = document.querySelectorAll(".navbar-nav a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    console.log("Nav item clicked, closing menu");
+    menuPanel.classList.remove("show");
+    menuPanel.classList.add("collapse");
+    navButton.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "auto";
+  });
+});
 
 navButton.addEventListener("click", function () {
   // Toggle the "show" class on the menu panel
