@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="service.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="report.css">
+  <link rel="stylesheet" href="feedBack.css">
   <script>
     tailwind.config = {
       theme: {
@@ -124,110 +126,228 @@
     </div>
   </section>
   <!-- الخدمات -->
-     
-<section class="services" id="services">
-  <!-- <div class="h-28 md:h-0"></div> -->
-  <h1 class="m-20 text-center service_title animate__animated animate__backInUp animate__delay-0.5s">
-    الخدمات
-</h1>
 
+  <section class="services" id="services">
+    <!-- <div class="h-28 md:h-0"></div> -->
+    <h1 class="m-20 text-center service_title animate__animated animate__backInUp animate__delay-0.5s">
+      الخدمات
+    </h1>
+
+
+    <div class="owl-carousel owl-theme ">
+      <div class="card">
+        <div class="slide slide1">
+          <div class="content">
+            <div class="item">
+              <div class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-droplet  text-[#CEB579] text-2xl"></i>
+                <h2 class="text-xl text-center">قطاع المياه</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div class="content">
+            <p>احصل على خدمات المياه، واشتكِ عن الأعطال أو الانقطاعات</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="slide slide1">
+          <div class="content">
+            <div class="item">
+              <div class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-seedling text-[#CEB579] text-2xl"></i>
+                <h2 class="text-xl text-center">قطاع الزراعة</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div class="content">
+            <p> استخرج التراخيص وقدم الشكاوى المتعلقة بالمجال الزراعي</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="slide slide1">
+          <div class="content">
+            <div class="item">
+              <div class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-bolt text-[#CEB579] text-2xl"></i>
+                <h2 class="text-xl text-center">قطاع الكهرباء والطاقة</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div class="content">
+            <p>تابع خدمات الكهرباء والطاقة ، وأبلغ عن أي مشاكل أو طلبات</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="slide slide1">
+          <div class="content">
+            <div class="item">
+              <div class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
+                <i class="fas fa-user-cog text-[#CEB579] text-2xl"></i>
+                <h2 class="text-xl text-center">الخدمات العامة</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div class="content">
+            <p> أبلغ عن مشكلات البنية التحتية والخدمات البلدية</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="slide slide1">
+          <div class="content">
+            <div class="item">
+              <div class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-car-rear text-[#CEB579] text-2xl"></i>
+                <h2 class="text-xl text-center">دائرة السير </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div class="content">
+            <p>استعلم عن المخالفات، وقدم طلبات التراخيص بسهولة</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- البلاغات العامة  -->
+  <section class="reportss scroll-mt-24" id="reportss">
+    <p class="text-[50px] text-center mt-5 mb-2">بلاغات عامة</p>
+
+    <div class="repoerts flex flex-col lg:flex-row-reverse lg:items-start w-full px-5 ">
+      <!-- side 1 -->
+      <div class="report_sec w-full lg:w-4/6 bg-white p-12 rounded-lg shadow-lg">
+
+        <div class="flex flex-col lg:flex-row-reverse mb-7 w-full">
+          <div class="flex flex-col items-end w-full lg:w-1/2 lg:ml-5">
+            <label class="mb-3 text-lg">: الاسم الرباعي</label>
+            <input type="text" class="bg-gray-300 rounded-md h-10 w-full text-right">
+          </div>
+          <div class="flex flex-col items-end w-full lg:w-1/2">
+            <label class="mb-3 text-lg">: الرقم الوطني</label>
+            <input type="number" class="bg-gray-300 rounded-md h-10 w-full text-right">
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row-reverse mb-7 w-full">
+          <div class="flex flex-col items-end w-full lg:w-1/2 lg:ml-5">
+            <label class="mb-3 text-lg">: البريد الإلكتروني</label>
+            <input type="email" class="bg-gray-300 rounded-md h-10 w-full  text-right">
+          </div>
+          <div class="flex flex-col items-end w-full lg:w-1/2">
+            <label class="mb-3 text-lg">: رقم الهاتف</label>
+            <input type="number" class="bg-gray-300 rounded-md h-10 w-full text-right">
+          </div>
+        </div>
+
+        <div class="flex flex-col items-end w-full mb-7">
+          <label class="mb-3 text-lg">: (المحافظة والمنطقة) الموقع</label>
+          <input type="text" class="bg-gray-300 rounded-md h-10 w-full text-right">
+        </div>
+
+        <div class="flex flex-col items-end w-full">
+          <label class="mb-3 text-lg">: اكتب بلاغك</label>
+          
+          <textarea class="bg-gray-300 rounded-md h-28 w-full  text-right"></textarea>
+        </div>
+        <button
+          class="bg-[#ceb579]  rounded-md text-white font-bold flex justify-center items-center w-2/5 lg:w-1/5 h-fit sm:ml-0 py-1 my-1 px-2 mt-3">
+          تقديم بلاغ
+        </button>
+      </div>
+      <!-- side 2 -->
+      <div class="w-full lg:w-2/6 h-80 p-5 text-white hidden lg:block lg:mr-5 m-auto flex justify-center items-center">
+        <div class="flex flex-col justify-center items-center w-full h-full">
+          <div class="container">
+            <svg class="counter" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" class="background-circle" />
+              <circle cx="50" cy="50" r="45" class="progress-circle" transform="rotate(-90 50 50)" />
+              <text x="50" y="55" text-anchor="middle" class="counter-text">0%</text>
+            </svg>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- العطاءات  -->
+
+  <!-- التعليقات والاقتراحات -->
+  <section class="feedbacks scroll-mt-24" id="feedbacks">
+    <p class="text-[50px] text-center mt-32 mb-8"> الإقتراحات والتعليقات</p>
   
-  <div class="owl-carousel owl-theme ">
-  <div class="card">
-    <div class="slide slide1">
-      <div class="content">
-        <div class="item">
-          <div
-            class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
-            <i class="fa-solid fa-droplet  text-[#CEB579] text-2xl"></i>
-            <h2 class="text-xl text-center">قطاع المياه</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="slide slide2">
-      <div class="content">
-      <p>احصل على خدمات المياه، واشتكِ عن الأعطال أو الانقطاعات</p>
-      </div>
-  </div>
-  </div>
-  <div class="card">
-    <div class="slide slide1">
-      <div class="content">
-        <div class="item">
-          <div
-          class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
-            <i class="fa-solid fa-seedling text-[#CEB579] text-2xl"></i>
-            <h2 class="text-xl text-center">قطاع الزراعة</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="slide slide2">
-      <div class="content">
-      <p> استخرج التراخيص وقدم الشكاوى المتعلقة بالمجال الزراعي</p>
-      </div>
-  </div>
-  </div>
-   <div class="card">
-    <div class="slide slide1">
-      <div class="content">
-        <div class="item">
-          <div
-          class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
-            <i class="fa-solid fa-bolt text-[#CEB579] text-2xl"></i>
-            <h2 class="text-xl text-center">قطاع الكهرباء والطاقة</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="slide slide2">
-      <div class="content">
-      <p>تابع خدمات الكهرباء والطاقة ، وأبلغ عن أي مشاكل أو طلبات</p>
-      </div>
-  </div>
-  </div>
-  <div class="card">
-    <div class="slide slide1">
-      <div class="content">
-        <div class="item">
-          <div
-          class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
-            <i class="fas fa-user-cog text-[#CEB579] text-2xl"></i>
-            <h2 class="text-xl text-center">الخدمات العامة</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="slide slide2">
-      <div class="content">
-      <p> أبلغ عن مشكلات البنية التحتية والخدمات البلدية</p>
-      </div>
-  </div>
-  </div>
-  <div class="card">
-    <div class="slide slide1">
-      <div class="content">
-        <div class="item">
-          <div
-          class=" w-56 h-56 p-4 flex flex-col items-center justify-center">
-            <i class="fa-solid fa-car-rear text-[#CEB579] text-2xl"></i>
-            <h2 class="text-xl text-center">دائرة السير </h2>
-          </div>
-        </div>    
-      </div>
-    </div>
-    <div class="slide slide2">
-      <div class="content">
-      <p>استعلم عن المخالفات، وقدم طلبات التراخيص بسهولة</p>
-      </div>
-    </div>
-  </div>
-        </div>
-
-      </section>
-
+  <div class=" flex flex-col lg:flex-row-reverse lg:items-center lg:justify-center w-full px-5">
   
+    <div class="feedBack w-full lg:w-4/6 bg-white p-12 rounded-lg shadow-lg  ">
+      
+      <div class="flex flex-col lg:flex-row-reverse mb-7 w-full">
+        <div class="flex flex-col items-end w-full lg:w-1/2 lg:ml-5">
+          <label class="mb-3 text-lg">: الاسم الرباعي</label>
+          <input type="text" class="bg-gray-300 rounded-md h-10 w-full text-right">
+        </div>
+        <div class="flex flex-col items-end w-full lg:w-1/2">
+          <label class="mb-3 text-lg">: الرقم الوطني</label>
+          <input type="number" class="bg-gray-300 rounded-md h-10 w-full text-right">
+        </div>
+      </div>
+
+      <div class="flex flex-col lg:flex-row-reverse mb-7 w-full">
+        <div class="flex flex-col items-end w-full lg:w-1/2 lg:ml-5">
+          <label class="mb-3 text-lg">: البريد الإلكتروني</label>
+          <input type="email" class="bg-gray-300 rounded-md h-10 w-full  text-right">
+        </div>
+        <div class="flex flex-col items-end w-full lg:w-1/2">
+          <label class="mb-3 text-lg">: رقم الهاتف</label>
+          <input type="number" class="bg-gray-300 rounded-md h-10 w-full text-right">
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row-reverse mb-7 w-full">
+        <div class="flex flex-col items-end w-full lg:w-1/2 lg:ml-5">
+        <label class="mb-3 text-lg">: (المحافظة والمنطقة) الموقع</label>
+        <input type="text" class="bg-gray-300 rounded-md h-10 w-full text-right">
+      </div>
+      <div class="flex flex-col items-end w-full lg:w-1/2">
+        <label class="mb-3 text-lg">: القطاع</label>
+        <select class="bg-gray-300 rounded-md h-10 w-full text-right" >
+          <option value="" disabled selected>اختر</option>
+          <option value="">الزراعة </option>
+          <option value="">المياه </option>
+          <option value="">الخدمات العامة </option>
+          <option value="">الكهرباء والطاقة </option>
+          <option value="">دائرة السير </option>
+        </select>
+      </div>
+</div>
+      <div class="flex flex-col items-end w-full">
+        <label class="mb-3 text-lg">: اكتب اقتراحك/ تعليقك</label> 
+        <!-- <textarea class="bg-gray-300 rounded-md h-40 w-full  text-right"></textarea> -->
+        <textarea class="bg-gray-300 rounded-md h-28 w-full  text-right"></textarea>
+      </div>
+      <button
+    class="bg-[#ceb579] rounded-md text-white font-bold flex justify-center items-center w-2/5 lg:w-1/5 h-fit py-1 my-1 px-2 mt-3 mx-auto">
+    إرسال
+  </button>
+    </div>
+
+  </section>
+
+
   <p>test</p>
   <p>test</p>
   <p>test</p>
@@ -262,7 +382,8 @@
   <p>test</p>
   <script src="./template.js"></script>
   <script src="service.js"></script>
-  
+  <script src="reprte.js"></script>
+
 </body>
 
 </html>

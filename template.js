@@ -35,7 +35,7 @@ class SpecialHeader extends HTMLElement {
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-150 text-white">
-                <a href="#balagh">بلاغات عامة</a>
+                <a href="#reportss">بلاغات عامة</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-150 text-white">
@@ -47,7 +47,7 @@ class SpecialHeader extends HTMLElement {
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-200 text-white">
-                <a href="">التعليقات و الاقتراحات</a>
+                <a href="#feedbacks">التعليقات و الاقتراحات</a>
               </li>
               <li
                 class="nav-item sm:w-1/2 w-full min-h-[9vh] flex justify-center items-center sm:text-2xl text-lg sm:mb-5 delay-200 text-white">
