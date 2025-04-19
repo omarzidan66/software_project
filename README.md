@@ -7,6 +7,5 @@ change the color of nav sectoins when i scroll down to each section
 color of inputs-->bg-gray-300 
 
 
-Design a pages path 
 
 color gold #CEB579 
