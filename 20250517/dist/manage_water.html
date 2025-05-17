@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap"
+      rel="stylesheet" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="../src/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="shadow-md bg-white">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-10 py-3">
+        <div class="flex items-center justify-between">
+          <button
+            id="menu-toggle"
+            class="sm:hidden text-goldForm focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <ul class="hidden sm:flex sm:items-center gap-8 text-base">
+            <li>
+              <a href="./categories.html" class="hover:text-goldForm font-bold">
+                القطاعات</a
+              >
+            </li>
+            <li>
+              <a href="./dashboard.html" class="hover:text-goldForm"
+                >إحصاءات عامة</a
+              >
+            </li>
+          </ul>
+          <div class="text-xl font-bold">شعار</div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="sm:hidden hidden mt-4 space-y-2">
+          <a
+            href="#"
+            class="block px-4 py-2 rounded hover:bg-gray-100 font-bold">
+            إحصاءات عامة</a
+          >
+          <a
+            href="./categories.html"
+            class="block px-4 py-2 rounded hover:bg-gray-100"
+            >القطاعات</a
+          >
+        </div>
+      </div>
+    </nav>
+    <p
+      class="sm:text-3xl text-md text-goldForm font-bold mx-10 mt-5 text-center">
+      قطاع المياه
+    </p>
+
+    <section class="mx-10 mt-10">
+      <p class="sm:text-xl text-sm text-goldForm font-medium mb-10">
+        نظرة عامة
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white overflow-hidden shadow rounded-lg">
+          <div class="px-4 py-5 sm:p-6">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                <i class="fas fa-file-alt text-white"></i>
+              </div>
+              <div class="ml-5">
+                <div class="text-sm font-medium text-gray-500 truncate">
+                  Total Submissions
+                </div>
+                <div class="mt-1 text-3xl font-semibold text-gray-900">128</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white overflow-hidden shadow rounded-lg">
+          <div class="px-4 py-5 sm:p-6">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                <i class="fas fa-spinner text-white"></i>
+              </div>
+              <div class="ml-5">
+                <div class="text-sm font-medium text-gray-500 truncate">
+                  Pending
+                </div>
+                <div class="mt-1 text-3xl font-semibold text-gray-900">42</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white overflow-hidden shadow rounded-lg">
+          <div class="px-4 py-5 sm:p-6">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                <i class="fas fa-check-circle text-white"></i>
+              </div>
+              <div class="ml-5">
+                <div class="text-sm font-medium text-gray-500 truncate">
+                  Resolved
+                </div>
+                <div class="mt-1 text-3xl font-semibold text-gray-900">75</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white overflow-hidden shadow rounded-lg">
+          <div class="px-4 py-5 sm:p-6">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 bg-red-500 rounded-md p-3">
+                <i class="fas fa-clock text-white"></i>
+              </div>
+              <div class="ml-5">
+                <div class="text-sm font-medium text-gray-500 truncate">
+                  Urgent
+                </div>
+                <div class="mt-1 text-3xl font-semibold text-gray-900">11</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mx-10 mt-10">
+      <p class="sm:text-xl text-sm text-goldForm font-medium mb-10">
+        Revent Requests
+      </p>
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                scope="col"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                ID
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Name
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Category
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Service
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Date & Time
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Status
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="bg-white divide-y divide-gray-200"
+            id="submissionsTable">
+            <tr>
+              <td
+                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                #1
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                Omar Zidan
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                water department
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                supply water
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                May 14, 2025 12:30 AM
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span
+                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                  new
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <button
+                  class="text-goldForm hover:font-extrabold view-detail mr-3 font-bold">
+                  View
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                #2
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                Omar Zidan
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                water department
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                supply water
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                May 14, 2025 12:30 AM
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span
+                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                  In Progress
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <button
+                  class="text-goldForm hover:font-extrabold view-detail mr-3 font-bold">
+                  View
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                #3
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                Omar Zidan
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                water department
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                supply water
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                May 14, 2025 12:30 AM
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span
+                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Resolved
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <button
+                  class="text-goldForm hover:font-extrabold view-detail mr-3 font-bold">
+                  View
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div
+      id="detailModal"
+      class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center hidden z-50">
+      <div
+        class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-screen overflow-y-auto">
+        <div
+          class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+          <h3 class="text-lg font-medium text-gray-900">
+            Form Submission Details
+          </h3>
+          <button
+            id="closeDetailModal"
+            class="text-gray-400 hover:text-gray-500">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="px-6 py-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >Name :</label
+                >
+                <div id="detailName" class="text-sm text-gray-900">omar</div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >National ID</label
+                >
+                <div id="detailNationalId" class="mt-1 text-sm text-gray-900">
+                  20001231234
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >Phone Number</label
+                >
+                <div id="detailPhone" class="mt-1 text-sm text-gray-900">
+                  0790000000
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >Email</label
+                >
+                <div id="detailEmail" class="mt-1 text-sm text-gray-900">
+                  omar@gmail.com
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >Location</label
+                >
+                <div id="detailLocation" class="mt-1 text-sm text-gray-900">
+                  amman,Tela'a Al Ali
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >Category</label
+                >
+                <div id="detailCategory" class="mt-1 text-sm text-gray-900">
+                  water department
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >Service</label
+                >
+                <div id="detailService" class="mt-1 text-sm text-gray-900">
+                  supply water
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >Date & Time Submitted</label
+                >
+                <div id="detailDateTime" class="mt-1 text-sm text-gray-900">
+                  May 14, 2025 12:30 AM
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="block text-sm font-bold text-gray-700"
+                  >Status</label
+                >
+                <select
+                  id="detailStatus"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="New">New</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Resolved">Resolved</option>
+                  <option value="Closed">Closed</option>
+                  <option value="Rejected">Rejected</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <label class="block text-sm font-bold text-gray-700"
+              >Description</label
+            >
+            <div
+              id="detailDescription"
+              class="mt-1 text-sm text-gray-900 p-3 bg-gray-50 rounded-md max-h-32 overflow-y-auto">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
+              repellat ullam temporibus error possimus similique minima
+              consequatur iste soluta quam. Sunt nostrum exercitationem pariatur
+              aut distinctio iure aperiam ad repellendus?
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <label class="block text-sm font-bold text-gray-700">Photos</label>
+            <div id="detailPhotos" class="mt-1 grid grid-cols-3 gap-2"></div>
+          </div>
+
+          <div class="mt-4">
+            <label class="block text-sm font-bold text-gray-700"
+              >Admin Comments</label
+            >
+            <div
+              id="commentsContainer"
+              class="mt-1 space-y-2 max-h-32 overflow-y-auto p-2 bg-gray-50 rounded-md">
+              no admin comment here
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <label
+              for="newComment"
+              class="block text-sm font-bold text-gray-700"
+              >Add Comment</label
+            >
+            <textarea
+              id="newComment"
+              rows="3"
+              class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              placeholder="Type your comment here..."></textarea>
+          </div>
+        </div>
+        <div class="px-6 py-4 border-t border-gray-200 flex justify-end">
+          <button
+            id="saveChanges"
+            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const viewDetailButtons = document.querySelectorAll(".view-detail");
+      const detailModal = document.getElementById("detailModal");
+      const closeDetailModal = document.getElementById("closeDetailModal");
+      const saveChangesButton = document.getElementById("saveChanges");
+
+      viewDetailButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          detailModal.classList.remove("hidden");
+        });
+      });
+
+      closeDetailModal.addEventListener("click", () => {
+        detailModal.classList.add("hidden");
+      });
+
+      saveChangesButton.addEventListener("click", () => {
+        // Handle saving changes here
+        showNotification("Changes saved successfully!");
+        detailModal.classList.add("hidden");
+      });
+      function showNotification(message) {
+        const notification = document.createElement("div");
+        notification.className =
+          "fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50 transition-opacity duration-300";
+        notification.textContent = message;
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+          notification.style.opacity = "0";
+          setTimeout(() => {
+            if (document.body.contains(notification)) {
+              // Check if still in DOM
+              document.body.removeChild(notification);
+            }
+          }, 300);
+        }, 3000);
+      }
+    </script>
+    <script src="./nav.js"></script>
+  </body>
+</html>
