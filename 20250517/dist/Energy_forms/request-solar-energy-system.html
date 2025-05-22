@@ -156,7 +156,7 @@
           </div>
 
         <div class="relative mb-6 md:col-span-2">
-  <select id="location" name="location"
+  <select id="company" name="location"
     class="peer w-full p-4 bg-gray-100 border border-gray-200 rounded-lg text-[15px] text-gray-800 transition-all duration-300 ease-in-out focus:outline-none focus:border-[#d4af37] focus:bg-[rgba(212,175,55,0.05)] focus:ring-[3px] focus:ring-[#d4af37]/[.15] appearance-none pr-4"
     style="background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22%23000000%22 viewBox=%220 0 24 24%22><path d=%22M7 10l5 5 5-5z%22/></svg>'); background-repeat: no-repeat; background-position: left 0.75rem center; background-size: 1.25rem;">
     <option disabled selected hidden>اختر شركة الطاقة الشمسية</option>
@@ -168,7 +168,7 @@
     <option value="shams-jordan">شمس الأردن – admin@shams.jo</option>
   </select>
 
-  <label for="location"
+  <label for="company"
     class="absolute right-4 -top-3 text-xs text-[#d4af37] bg-white px-[6px] pointer-events-none transition-all duration-300 ease-in-out peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:right-4 peer-placeholder-shown:px-0 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:right-2.5 peer-focus:text-xs peer-focus:text-[#d4af37] peer-focus:bg-white peer-focus:px-[6px]">
     اسم الشركة
   </label>
@@ -213,6 +213,44 @@
         document.getElementById('selected-file').textContent = fileName;
       });
     </script>
+    <script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let formIsValid = true;
+
+    function setInvalid(input) {
+      input.classList.add("border-red-500");
+      input.classList.remove("border-gray-200");
+      formIsValid = false;
+    }
+
+    function setValid(input) {
+      input.classList.remove("border-red-500");
+      input.classList.add("border-gray-200");
+    }
+
+    const address = document.getElementById("location");
+    const company = document.getElementById("company");
+
+    if (!address.value.trim()) {
+      setInvalid(address);
+    } else {
+      setValid(address);
+    }
+
+    if (!company.value) {
+      setInvalid(company);
+    } else {
+      setValid(company);
+    }
+
+    if (formIsValid) {
+      console.log("Form is valid. Ready to submit.");
+      // this.submit(); // Uncomment if needed
+    }
+  });
+</script>
+
 </body>
 
 </html>

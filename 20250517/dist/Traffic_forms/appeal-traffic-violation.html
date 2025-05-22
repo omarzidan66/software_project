@@ -147,7 +147,7 @@
 
           <!-- New Location Field -->
           <div class="relative mb-6">
-            <input type="text" id="location" name="location" placeholder="الموقع"
+            <input type="text" id="registrationNumber" name="location" placeholder="الموقع"
               class="peer w-full p-4 bg-gray-100 border border-gray-200 rounded-lg text-[15px] text-gray-800 transition-all duration-300 ease-in-out placeholder-transparent focus:outline-none focus:border-[#d4af37] focus:bg-[rgba(212,175,55,0.05)] focus:ring-[3px] focus:ring-[#d4af37]/[.15]" />
             <label for="location"
               class="absolute right-4 -top-3 text-xs text-[#d4af37] bg-white px-[6px] pointer-events-none transition-all duration-300 ease-in-out peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:right-4 peer-placeholder-shown:px-0 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:right-2.5 peer-focus:text-xs peer-focus:text-[#d4af37] peer-focus:bg-white peer-focus:px-[6px]">
@@ -155,7 +155,7 @@
             </label>
           </div>
           <div class="relative mb-6">
-            <input type="text" id="location" name="location" placeholder="الموقع"
+            <input type="text" id="vehicleNumber" name="location" placeholder="الموقع"
               class="peer w-full p-4 bg-gray-100 border border-gray-200 rounded-lg text-[15px] text-gray-800 transition-all duration-300 ease-in-out placeholder-transparent focus:outline-none focus:border-[#d4af37] focus:bg-[rgba(212,175,55,0.05)] focus:ring-[3px] focus:ring-[#d4af37]/[.15]" />
             <label for="location"
               class="absolute right-4 -top-3 text-xs text-[#d4af37] bg-white px-[6px] pointer-events-none transition-all duration-300 ease-in-out peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:right-4 peer-placeholder-shown:px-0 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:right-2.5 peer-focus:text-xs peer-focus:text-[#d4af37] peer-focus:bg-white peer-focus:px-[6px]">
@@ -163,7 +163,7 @@
             </label>
           </div>
           <div class="relative mb-6">
-            <input type="text" id="location" name="location" placeholder="الموقع"
+            <input type="text" id="codeNumber" name="location" placeholder="الموقع"
               class="peer w-full p-4 bg-gray-100 border border-gray-200 rounded-lg text-[15px] text-gray-800 transition-all duration-300 ease-in-out placeholder-transparent focus:outline-none focus:border-[#d4af37] focus:bg-[rgba(212,175,55,0.05)] focus:ring-[3px] focus:ring-[#d4af37]/[.15]" />
             <label for="location"
               class="absolute right-4 -top-3 text-xs text-[#d4af37] bg-white px-[6px] pointer-events-none transition-all duration-300 ease-in-out peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:right-4 peer-placeholder-shown:px-0 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:right-2.5 peer-focus:text-xs peer-focus:text-[#d4af37] peer-focus:bg-white peer-focus:px-[6px]">
@@ -204,7 +204,53 @@
 
     <!-- <script src="../dist/contact.js"></script> -->
 
-  
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let formIsValid = true;
+
+    function setInvalid(input) {
+      input.classList.add("border-red-500");
+      input.classList.remove("border-gray-200");
+      formIsValid = false;
+    }
+
+    function setValid(input) {
+      input.classList.remove("border-red-500");
+      input.classList.add("border-gray-200");
+    }
+
+    // Get all inputs
+    const registrationNumber = document.getElementById("registrationNumber");
+    const vehicleNumber = document.getElementById("vehicleNumber");
+    const codeNumber = document.getElementById("codeNumber");
+
+    // Validate each field
+    if (!registrationNumber.value.trim()) {
+      setInvalid(registrationNumber);
+    } else {
+      setValid(registrationNumber);
+    }
+
+    if (!vehicleNumber.value.trim()) {
+      setInvalid(vehicleNumber);
+    } else {
+      setValid(vehicleNumber);
+    }
+
+    if (!codeNumber.value.trim()) {
+      setInvalid(codeNumber);
+    } else {
+      setValid(codeNumber);
+    }
+
+    if (formIsValid) {
+      console.log("Form is valid and ready to submit.");
+      // this.submit(); // Uncomment to actually submit
+    }
+  });
+</script>
+
     
 </body>
 

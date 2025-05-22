@@ -119,7 +119,7 @@
           </div>
 
           <div class="relative mb-6">
-            <input type="email" id="email" name="email" value="farah@gmail.com" disabled class="peer w-full p-4 bg-gray-100 border border-gray-200 rounded-lg text-[15px] text-gray-800
+            <input type="email" id="email" name="email" value="farah@gmail.com" required class="peer w-full p-4 bg-gray-100 border border-gray-200 rounded-lg text-[15px] text-gray-800
              transition-all duration-300 ease-in-out placeholder-transparent
              focus:outline-none focus:border-[#d4af37] focus:bg-[rgba(212,175,55,0.05)]
              focus:ring-[3px] focus:ring-[#d4af37]/[.15]
@@ -133,7 +133,7 @@
           </div>
 
           <div class="relative mb-6">
-            <input type="tel" id="phone" name="phone" value="0700000000" disabled class="peer w-full p-4 bg-gray-100 border border-gray-200 rounded-lg text-[15px] text-gray-800
+            <input type="tel" id="phone" name="phone" value="0700000000"   class="peer w-full p-4 bg-gray-100 border border-gray-200 rounded-lg text-[15px] text-gray-800
              transition-all duration-300 ease-in-out placeholder-transparent
              focus:outline-none focus:border-[#d4af37] focus:bg-[rgba(212,175,55,0.05)]
              focus:ring-[3px] focus:ring-[#d4af37]/[.15]
@@ -222,7 +222,78 @@
         const fileName = e.target.files[0] ? e.target.files[0].name : '';
         document.getElementById('selected-file').textContent = fileName;
       });
+      
     </script>
+    <script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form submission
+    let formIsValid = true;
+
+    // Helper function to set error style
+    function setInvalid(input) {
+      input.classList.add("border-red-500");
+      input.classList.remove("border-gray-200");
+      formIsValid = false;
+    }
+
+    // Helper function to clear error style
+    function setValid(input) {
+      input.classList.remove("border-red-500");
+      input.classList.add("border-gray-200");
+    }
+
+    // Get inputs
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const location = document.getElementById("location");
+    const photo = document.getElementById("photo");
+    const message = document.getElementById("message");
+
+    // Email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.value || !emailPattern.test(email.value)) {
+      setInvalid(email);
+    } else {
+      setValid(email);
+    }
+
+    // Phone validation (Jordanian format 07xxxxxxxx)
+    const phonePattern = /^07[0-9]{8}$/;
+    if (!phone.value || !phonePattern.test(phone.value)) {
+      setInvalid(phone);
+    } else {
+      setValid(phone);
+    }
+
+    // Location required
+    if (!location.value.trim()) {
+      setInvalid(location);
+    } else {
+      setValid(location);
+    }
+
+    // Optional: check photo is selected
+    // if (photo.files.length === 0) {
+    //   setInvalid(photo);
+    // } else {
+    //   setValid(photo);
+    // }
+
+    // Message required
+    if (!message.value.trim()) {
+      setInvalid(message);
+    } else {
+      setValid(message);
+    }
+
+    // If all valid, you can proceed (e.g., submit via fetch/AJAX or un-comment below)
+    if (formIsValid) {
+      console.log("Form is valid and ready to submit.");
+      // this.submit(); // Uncomment to allow actual form submission
+    }
+  });
+</script>
+
 </body>
 
 </html>

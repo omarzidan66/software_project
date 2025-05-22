@@ -204,6 +204,79 @@
         document.getElementById('selected-file').textContent = fileName;
       });
     </script>
+ <script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form submission
+    let formIsValid = true;
+
+    // Helper function to set error style
+    function setInvalid(input) {
+      input.classList.add("border-red-500");
+      input.classList.remove("border-gray-200");
+      formIsValid = false;
+    }
+
+    // Helper function to clear error style
+    function setValid(input) {
+      input.classList.remove("border-red-500");
+      input.classList.add("border-gray-200");
+    }
+
+    // Get inputs
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const location = document.getElementById("location");
+    const photo = document.getElementById("photo");
+    const message = document.getElementById("message");
+
+    // Email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.value || !emailPattern.test(email.value)) {
+      setInvalid(email);
+    } else {
+      setValid(email);
+    }
+
+    // Phone validation (Jordanian format 07xxxxxxxx)
+    const phonePattern = /^07[0-9]{8}$/;
+    if (!phone.value || !phonePattern.test(phone.value)) {
+      setInvalid(phone);
+    } else {
+      setValid(phone);
+    }
+
+    // Location required
+    if (!location.value.trim()) {
+      setInvalid(location);
+    } else {
+      setValid(location);
+    }
+
+    // Optional: check photo is selected
+    // if (photo.files.length === 0) {
+    //   setInvalid(photo);
+    // } else {
+    //   setValid(photo);
+    // }
+
+    // Message required
+    if (!message.value.trim()) {
+      setInvalid(message);
+    } else {
+      setValid(message);
+    }
+
+    // If all valid, you can proceed (e.g., submit via fetch/AJAX or un-comment below)
+    if (formIsValid) {
+      console.log("Form is valid and ready to submit.");
+      // this.submit(); // Uncomment to allow actual form submission
+    }
+  });
+</script>
+
+
+
+
 </body>
 
 </html>
