@@ -1,5 +1,5 @@
 # software_project
- 
+ add validation to form inputs 
 
 change the color of nav sectoins when i scroll down to each section 
 
