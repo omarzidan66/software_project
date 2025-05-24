@@ -186,7 +186,7 @@
         </div>
 
         <div class="text-center mt-2.5">
-          <button type="submit"
+          <button  type="submit"  id="submitBtn"
             class="inline-block bg-[#d4af37] text-white border-none py-4 px-8 rounded-full cursor-pointer text-base font-semibold transition-all duration-300 ease-in-out relative overflow-hidden shadow-[0_10px_20px_rgba(212,175,55,0.3)] hover:bg-[#b8860b] hover:-translate-y-[3px] hover:shadow-[0_15px_25px_rgba(212,175,55,0.4)] before:content-[''] before:absolute before:top-0 before:-right-full before:w-full before:h-full before:bg-gradient-to-l before:from-transparent before:via-white/30 before:to-transparent before:transition-all before:duration-500 hover:before:right-full active:translate-y-0 active:shadow-[0_5px_15px_rgba(212,175,55,0.2)]">
             إرسال
           </button>
@@ -214,7 +214,7 @@
       </div>
     </div>
 
-    <script src="../dist/contact.js"></script>
+    <!-- <script src="../dist/contact.js"></script> -->
 
   
     <script>
@@ -223,25 +223,26 @@
         document.getElementById('selected-file').textContent = fileName;
       });
     </script>
-                <script>
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
+<script>
+  const contactForm = document.getElementById("contactForm");
+  const successPopup = document.getElementById("successPopup");
+  const closePopupBtn = document.getElementById("closePopupBtn");
+
+  contactForm.addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent form submission
     let formIsValid = true;
 
-    // Helper function to set error style
     function setInvalid(input) {
       input.classList.add("border-red-500");
       input.classList.remove("border-gray-200");
       formIsValid = false;
     }
 
-    // Helper function to clear error style
     function setValid(input) {
       input.classList.remove("border-red-500");
       input.classList.add("border-gray-200");
     }
 
-    // Get inputs
     const email = document.getElementById("email");
     const phone = document.getElementById("phone");
     const location = document.getElementById("location");
@@ -272,13 +273,13 @@
       setValid(location);
     }
 
-    // Service ID required
+    // Optional: photo and serviceID validation
     // if (!serviceID.value.trim()) {
     //   setInvalid(serviceID);
     // } else {
     //   setValid(serviceID);
     // }
-    // Optional: check photo is selected
+
     // if (photo.files.length === 0) {
     //   setInvalid(photo);
     // } else {
@@ -292,13 +293,30 @@
       setValid(message);
     }
 
-    // If all valid, you can proceed (e.g., submit via fetch/AJAX or un-comment below)
     if (formIsValid) {
-      console.log("Form is valid and ready to submit.");
-      // this.submit(); // Uncomment to allow actual form submission
+      console.log("✅ Form is valid. Showing success popup.");
+      successPopup.classList.remove("hidden");
+      successPopup.classList.add("flex");
+      contactForm.reset();
+    } else {
+      console.log("❌ Validation failed.");
+    }
+  });
+
+  // Close popup
+  closePopupBtn.addEventListener("click", () => {
+    successPopup.classList.add("hidden");
+    successPopup.classList.remove("flex");
+  });
+
+  successPopup.addEventListener("click", (e) => {
+    if (e.target === successPopup) {
+      successPopup.classList.add("hidden");
+      successPopup.classList.remove("flex");
     }
   });
 </script>
+
 </body>
 
 </html>

@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap"
       rel="stylesheet" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link href="../../../src/output.css" rel="stylesheet" />
+    <link href="../../src/output.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="shadow-md bg-white">
@@ -38,31 +38,33 @@
           </button>
           <ul class="hidden sm:flex sm:items-center gap-8 text-base">
             <li>
-              <a href="./dashboard.html" class="hover:text-goldForm"
-                >صفحة التحكم</a
+              <a href="./categories.html" class="hover:text-goldForm font-bold">
+                القطاعات</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-goldForm font-bold">القطاعات</a>
+              <a href="./dashboard.html" class="hover:text-goldForm"
+                >إحصاءات عامة</a
+              >
             </li>
-            <li><a href="#" class="hover:text-goldForm">البلاغات</a></li>
           </ul>
-          <div class="text-xl font-bold">شعار</div>
+          <a
+            href="./loginAdmin_agriculture.html"
+            class="bg-red-500 hover:bg-red-600 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-300">
+            تسجيل خروج
+          </a>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="sm:hidden hidden mt-4 space-y-2">
           <a
-            href="./dashboard.html"
-            class="block px-4 py-2 rounded hover:bg-gray-100"
-            >صفحة التحكم</a
+            href="#"
+            class="block px-4 py-2 rounded hover:bg-gray-100 font-bold">
+            إحصاءات عامة</a
           >
           <a
-            href="#"
-            class="block px-4 py-2 rounded hover:bg-gray-100 font-bold"
+            href="./categories.html"
+            class="block px-4 py-2 rounded hover:bg-gray-100"
             >القطاعات</a
-          >
-          <a href="#" class="block px-4 py-2 rounded hover:bg-gray-100"
-            >البلاغات</a
           >
         </div>
       </div>

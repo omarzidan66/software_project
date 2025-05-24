@@ -203,7 +203,7 @@
       </div>
     </div>
 
-    <script src="../dist/contact.js"></script>
+    <!-- <script src="../dist/contact.js"></script> -->
 
   
     <script>
@@ -212,41 +212,39 @@
         document.getElementById('selected-file').textContent = fileName;
       });
     </script>
-        <script>
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent form submission
+<script>
+  const contactForm = document.getElementById("contactForm");
+  const successPopup = document.getElementById("successPopup");
+  const closePopupBtn = document.getElementById("closePopupBtn");
+
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
     let formIsValid = true;
 
-    // Helper function to set error style
+    // Helper: apply red border for invalid input
     function setInvalid(input) {
       input.classList.add("border-red-500");
       input.classList.remove("border-gray-200");
       formIsValid = false;
     }
 
-    // Helper function to clear error style
+    // Helper: restore border for valid input
     function setValid(input) {
       input.classList.remove("border-red-500");
       input.classList.add("border-gray-200");
     }
 
-    // Get inputs
-    const email = document.getElementById("email");
+    // Get all input elements
     const phone = document.getElementById("phone");
     const location = document.getElementById("location");
     const photo = document.getElementById("photo");
     const message = document.getElementById("message");
     const serviceID = document.getElementById("serviceID");
 
-    // Email validation
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.value || !emailPattern.test(email.value)) {
-      setInvalid(email);
-    } else {
-      setValid(email);
-    }
+   
 
-    // Phone validation (Jordanian format 07xxxxxxxx)
+    // Phone validation (Jordan format: 07xxxxxxxx)
     const phonePattern = /^07[0-9]{8}$/;
     if (!phone.value || !phonePattern.test(phone.value)) {
       setInvalid(phone);
@@ -254,40 +252,57 @@
       setValid(phone);
     }
 
-    // Location required
+    // Location validation
     if (!location.value.trim()) {
       setInvalid(location);
     } else {
       setValid(location);
     }
 
-    // Service ID required
+    // Service ID validation
     if (!serviceID.value.trim()) {
       setInvalid(serviceID);
     } else {
       setValid(serviceID);
     }
-    // Optional: check photo is selected
-    // if (photo.files.length === 0) {
-    //   setInvalid(photo);
-    // } else {
-    //   setValid(photo);
-    // }
 
-    // Message required
+    // Message validation
     if (!message.value.trim()) {
       setInvalid(message);
     } else {
       setValid(message);
     }
 
-    // If all valid, you can proceed (e.g., submit via fetch/AJAX or un-comment below)
+    // Final result
     if (formIsValid) {
-      console.log("Form is valid and ready to submit.");
-      // this.submit(); // Uncomment to allow actual form submission
+      console.log("✅ Form is valid. Showing popup...");
+
+      // Show success popup
+      successPopup.classList.remove("hidden");
+      successPopup.classList.add("flex");
+
+      // Reset form
+      contactForm.reset();
+    } else {
+      console.log("❌ Form has errors. Please fix highlighted fields.");
+    }
+  });
+
+  // Close popup on button click
+  closePopupBtn.addEventListener("click", function () {
+    successPopup.classList.add("hidden");
+    successPopup.classList.remove("flex");
+  });
+
+  // Optional: close popup by clicking outside content
+  successPopup.addEventListener("click", function (event) {
+    if (event.target === successPopup) {
+      successPopup.classList.add("hidden");
+      successPopup.classList.remove("flex");
     }
   });
 </script>
+
 </body>
 
 </html>
