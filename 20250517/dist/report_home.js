@@ -13,7 +13,10 @@ const observer = new IntersectionObserver(
                   <circle cx="50" cy="50" r="45" class="progress-circle" transform="rotate(-90 50 50)" style="stroke: #008000; fill: none; stroke-width: 10;" />
                   <text x="50" y="55" text-anchor="middle" class="counter-text" fill="#fff" font-size="14">0%</text>
                 </svg>
+                
               </div>
+                      <p class="text-black mt-5">نسبة البلاغات التي تمت معالجتها</p>
+
             </div>
           `;
 
